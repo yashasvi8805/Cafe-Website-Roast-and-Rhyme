@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 400px;
+            background-color: #fff;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+
+        .login-register {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-register a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-register a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-box {
+            display: none;
+        }
+
+        .form-box.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- Login Form (Initially visible) -->
+        <div class="form-box login active">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+
+                <div class="login-register">
+                    <p>Don't have an account? 
+                        <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Registration Form (Initially hidden) -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+
+                <div class="login-register">
+                    <p>Already have an account? 
+                        <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the elements
+        const loginForm = document.querySelector('.form-box.login');
+        const registerForm = document.querySelector('.form-box.register');
+        const registerLink = document.querySelector('.register-link');
+        const loginLink = document.querySelector('.login-link');
+        
+        // Get form elements for validation
+        const loginEmail = loginForm.querySelector('input[type="email"]');
+        const loginPassword = loginForm.querySelector('input[type="password"]');
+        
+        const registerUsername = registerForm.querySelector('input[type="text"]');
+        const registerEmail = registerForm.querySelector('input[type="email"]');
+        const registerPassword = registerForm.querySelector('input[type="password"]');
+        const termsCheckbox = registerForm.querySelector('input[type="checkbox"]');
+        
+        // Validation for Login Form
+        function validateLoginForm() {
+            let valid = true;
+
+            // Clear previous error messages
+            clearErrors();
+
+            // Check if email is filled and valid
+            if (!loginEmail.value) {
+                showError(loginEmail, 'Email is required.');
+                valid = false;
+            } else if (!validateEmail(loginEmail.value)) {
+                showError(loginEmail, 'Please enter a valid email.');
+                valid = false;
+            }
+
+            // Check if password is filled
+            if (!loginPassword.value) {
+                showError(loginPassword, 'Password is required.');
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        // Validation for Registration Form
+        function validateRegisterForm() {
+            let valid = true;
+
+            // Clear previous error messages
+            clearErrors();
+
+            // Check if username is filled
+            if (!registerUsername.value) {
+                showError(registerUsername, 'Username is required.');
+                valid = false;
+            }
+
+            // Check if email is filled and valid
+            if (!registerEmail.value) {
+                showError(registerEmail, 'Email is required.');
+                valid = false;
+            } else if (!validateEmail(registerEmail.value)) {
+                showError(registerEmail, 'Please enter a valid email.');
+                valid = false;
+            }
+
+            // Check if password is filled
+            if (!registerPassword.value) {
+                showError(registerPassword, 'Password is required.');
+                valid = false;
+            } else if (registerPassword.value.length < 6) {
+                showError(registerPassword, 'Password must be at least 6 characters.');
+                valid = false;
+            }
+
+            // Check if terms & conditions checkbox is checked
+            if (!termsCheckbox.checked) {
+                showError(termsCheckbox, 'You must agree to the terms and conditions.');
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        // Function to show error messages
+        function showError(inputElement, message) {
+            const errorSpan = document.createElement('span');
+            errorSpan.classList.add('error');
+            errorSpan.textContent = message;
+            inputElement.parentElement.appendChild(errorSpan);
+        }
+
+        // Function to clear all error messages
+        function clearErrors() {
+            const errorSpans = document.querySelectorAll('.error');
+            errorSpans.forEach(error => error.remove());
+        }
+
+        // Function to validate email format
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Function to store user data in localStorage after registration
+        function storeUserData() {
+            const user = {
+                username: registerUsername.value,
+                email: registerEmail.value,
+                password: registerPassword.value
+            };
+            localStorage.setItem('user', JSON.stringify(user));
+        }
+
+        // Function to retrieve user data from localStorage
+        function getUserData() {
+            const user = localStorage.getItem('user');
+            return user ? JSON.parse(user) : null;
+        }
+
+        // Switch to Registration Form
+        registerLink.addEventListener('click', (event) => {
+            event.preventDefault();  // Prevent the default link behavior
+            loginForm.classList.remove('active');
+            registerForm.classList.add('active');
+        });
+
+        // Switch to Login Form
+        loginLink.addEventListener('click', (event) => {
+            event.preventDefault();  // Prevent the default link behavior
+            registerForm.classList.remove('active');
+            loginForm.classList.add('active');
+        });
+
+        // Handle Login Form Submission
+        loginForm.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();  // Prevent form submission
+            if (validateLoginForm()) {
+                // Redirect to the home page (after successful login)
+                window.location.href = "index.html"; // Change this to your actual home page URL
+            }
+        });
+
+        // Handle Registration Form Submission
+        registerForm.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();  // Prevent form submission
+            if (validateRegisterForm()) {
+                // Store user data after successful registration
+                storeUserData();
+                alert('Registration successful! You can now log in.');
+                registerForm.classList.remove('active');
+                loginForm.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

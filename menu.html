@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roast and Rhyme Café</title>
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  <header>
+    <h1>Roast and Rhyme Café</h1>
+    <div class="cart">
+      <button id="cart-button">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-container">
+    <section class="menu">
+    
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/7e/01/74/7e017416bb8cead28c77d5bb12fcdfca.jpg" alt="Coffee">
+        <h3>Coffee</h3>
+        <p>₹110</p>
+        <button class="add-to-cart" data-name="Coffee" data-price-inr="110">Add to Cart</button>
+      </div>
+      
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/e3/61/3d/e3613daf04a3625762b07bbf87982626.jpg" alt="Muffin">
+        <h3>Muffin</h3>
+        <p>₹150</p>
+        <button class="add-to-cart" data-name="Muffin" data-price-inr="150">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/5a/52/a2/5a52a266624d11c66befc9e625f047bf.jpg" alt="Sandwich">
+        <h3>Sandwich</h3>
+        <p>₹170</p>
+        <button class="add-to-cart" data-name="Sandwich" data-price-inr="170">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/736x/17/c9/e8/17c9e876de8155088f65505c17803bfb.jpg" alt="Tea">
+        <h3>Tea</h3>
+        <p>₹110</p>
+        <button class="add-to-cart" data-name="Tea" data-price-inr="110">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/94/1b/79/941b79c334b49f54cec2a77bcc3d5ed8.jpg" alt="Smoothie">
+        <h3>Smoothie</h3>
+        <p>₹210</p>
+        <button class="add-to-cart" data-name="Smoothie" data-price-inr="210">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/fe/eb/7d/feeb7da08ad6833143122b12bb31dd99.jpg" alt="Espresso">
+        <h3>Espresso</h3>
+        <p>₹150</p>
+        <button class="add-to-cart" data-name="Espresso" data-price-inr="150">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/51/08/e6/5108e6b196473c4bf20851a9b83ce3fd.jpg" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>₹160</p>
+        <button class="add-to-cart" data-name="Cappuccino" data-price-inr="160">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/51/42/55/5142558ef857cfc13649463df0542bec.jpg" alt="Croissant">
+        <h3>Croissant</h3>
+        <p>₹150</p>
+        <button class="add-to-cart" data-name="Croissant" data-price-inr="150">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/af/d1/bc/afd1bcf03c2fe9938c780d246d27c17d.jpg" alt="Brownie">
+        <h3>Brownie</h3>
+        <p>₹190</p>
+        <button class="add-to-cart" data-name="Brownie" data-price-inr="190">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/d4/af/ae/d4afaea8a8793de367d324501f016638.jpg" alt="Pasta">
+        <h3>Pasta</h3>
+        <p>₹170</p>
+        <button class="add-to-cart" data-name="Pasta" data-price-inr="170">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/60/de/4b/60de4b9b20724e9b1b627720b942d1ac.jpg" alt="Mocha">
+        <h3>Mocha</h3>
+        <p>₹210</p>
+        <button class="add-to-cart" data-name="Mocha" data-price-inr="210">Add to Cart</button>
+      </div>
+
+     
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/c6/03/f6/c603f63c3c1696acfb7fd4914a8eb09e.jpg" alt="Bagel">
+        <h3>Bagel</h3>
+        <p>₹150</p>
+        <button class="add-to-cart" data-name="Bagel" data-price-inr="150">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/20/45/4f/20454f27284b3a08cf635c3829885bfa.jpg" alt="Scone">
+        <h3>Scone</h3>
+        <p>₹220</p>
+        <button class="add-to-cart" data-name="Scone" data-price-inr="220">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/b3/c1/35/b3c13531329f49c5b40c92a8b14fe8c2.jpg" alt="Waffle">
+        <h3>Waffle</h3>
+        <p>₹210</p>
+        <button class="add-to-cart" data-name="Waffle" data-price-inr="210">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/20/48/cb/2048cb4c5130740aa6d3933f48c6699f.jpg" alt="Iced Coffee">
+        <h3>Iced Coffee</h3>
+        <p>₹190</p>
+        <button class="add-to-cart" data-name="Iced Coffee" data-price-inr="190">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/34/7a/ff/347aff58b2806ebfd5097022f630ae34.jpg" alt="Frappe">
+        <h3>Frappe</h3>
+        <p>₹110</p>
+        <button class="add-to-cart" data-name="Frappe" data-price-inr="110">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/df/44/38/df4438e74e74fa70a5537316671a85b1.jpg" alt="Iced Tea">
+        <h3>Iced Tea</h3>
+        <p>₹110</p>
+        <button class="add-to-cart" data-name="Iced Tea" data-price-inr="110">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/736x/9d/a4/71/9da471f7b011afa83f86e921abd0cac3.jpg" alt="Cheese Cake">
+        <h3>Cheese Cake</h3>
+        <p>₹200</p>
+        <button class="add-to-cart" data-name="Cheese Cake" data-price-inr="200">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/8d/95/7e/8d957e83a5b6f787f34d75d66603d842.jpg" alt="Macaron">
+        <h3>Macaron</h3>
+        <p>₹190</p>
+        <button class="add-to-cart" data-name="Macaron" data-price-inr="190">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/10/f0/80/10f0801af5897b99e85355048a40fbaf.jpg" alt="Carrot Cake">
+        <h3>Carrot Cake</h3>
+        <p>₹320</p>
+        <button class="add-to-cart" data-name="Carrot Cake" data-price-inr="320">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/8d/11/e7/8d11e7bcc59c32d9f953fa9518f36431.jpg" alt="Cookie">
+        <h3>Cookie</h3>
+        <p>₹120</p>
+        <button class="add-to-cart" data-name="Cookie" data-price-inr="120">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/25/80/fa/2580fa0f2e9a4fa3abb4a72a3d59fb3b.jpg" alt="Pizza">
+        <h3>Pizza</h3>
+        <p>₹250</p>
+        <button class="add-to-cart" data-name="Pizza" data-price-inr="250">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/736x/3c/e2/a5/3ce2a54e3f56f557b55a9483f8b016e3.jpg" alt="Burger">
+        <h3>Burger</h3>
+        <p>₹190</p>
+        <button class="add-to-cart" data-name="Burger" data-price-inr="190">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/ee/40/fb/ee40fb391512122d6a1838e4bfa331a1.jpg" alt="Hot Dog">
+        <h3>Hot Dog</h3>
+        <p>₹170</p>
+        <button class="add-to-cart" data-name="Hot Dog" data-price-inr="170">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://i.pinimg.com/564x/34/be/ea/34beea1ccc051dc2d731f3275e9c6bbc.jpg" alt="Pancake">
+        <h3>Pancake</h3>
+        <p>₹200</p>
+        <button class="add-to-cart" data-name="Pancake" data-price-inr="200">Add to Cart</button>
+      </div>
+      
+    </section>
+  </div>
+
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p>Total: ₹<span id="cart-total">0.00</span></p>
+      <button id="checkout-button">Checkout</button>
+      <button id="close-cart">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

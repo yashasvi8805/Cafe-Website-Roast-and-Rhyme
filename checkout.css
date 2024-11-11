@@ -1,0 +1,114 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #3e3e3e;
+    padding: 0;
+    margin: 0;
+}
+
+/* Container to center content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3em;
+    color: #3e2723; /* Dark brown color */
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #8d6e63; /* Lighter brown */
+}
+
+/* Checkout form section */
+.checkout {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8d6e63;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #3e2723; /* Dark brown */
+    color: #fff;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #5d4037; /* Lighter brown on hover */
+}
+
+/* Order summary section */
+.order-summary {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-summary ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-summary p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+}
